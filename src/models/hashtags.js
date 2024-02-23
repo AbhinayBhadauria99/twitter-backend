@@ -5,10 +5,10 @@ const hashtagsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tweets: {
+    tweets: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Tweet'
-    },
+    }]
 }, { timestamps: true });
 
 const Hashtag = mongoose.model('Hashtag', hashtagsSchema);
