@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 
 
@@ -13,4 +13,4 @@ const commentSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const Comment = mongoose.model('Comment', commentSchema); //This model name i.e. "Tweet" will become "Tweets" . Its default behaviour of ODMs and ORMs 
-module.exports = Comment;
+export default Comment;
