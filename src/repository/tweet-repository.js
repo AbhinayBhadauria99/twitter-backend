@@ -27,14 +27,7 @@ class TweetRepository {
         }
     }
 
-    async update(tweetId, data) {
-        try {
-            const tweet = await Tweet.findByIdAndUpdate(tweetId, data, { new: true });
-            return tweet;       //new: true basically logs latest updated docoment in terminal
-        } catch (error) {
-            console.log(error);
-        }
-    }
+
 
     async destroy(id) {
         try {
