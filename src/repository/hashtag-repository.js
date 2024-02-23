@@ -42,7 +42,7 @@ class HashtagRepository {
         try {
             const tags = await Hashtag.find({
                 title: titleList
-            }).select('title -_id');  // we dont wat entire object to be logged
+            });
             return tags;
         } catch (error) {
             console.log(error);
