@@ -7,7 +7,6 @@ import UserRespository from './user-repository.js'
 export {
     TweetRepository,
     HashtagRepository,
-    HashtagRepository,
     LikeRespository,
     UserRespository
 }

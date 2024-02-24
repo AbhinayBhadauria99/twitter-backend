@@ -8,7 +8,7 @@ class LikeService {
     }
 
     async toggleLike(modelId, modelType, userId) { // /api/v1/likes/toggle?id=modelid&type=Tweet
-        console.log(modelId, modelType, userId);   //if user has like a post toggle will unlike it vice versa
+        console.log(modelId, modelType, userId);
         if (modelType == 'Tweet') {
             var likeable = await this.tweetRepository.find(modelId)
         } else if (modelType == 'Comment') {
@@ -25,7 +25,7 @@ class LikeService {
         if (exists) {
             likeable.likes.pull(exists.id);
             await likeable.save();
-            await exists.remove();
+            await exists.deleteOne();
             var isAdded = false;
 
         } else {
