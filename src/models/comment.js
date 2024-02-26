@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema({
         require: true,
     },
     userId: {
-        ype: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
@@ -21,7 +21,13 @@ const commentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         refPath: 'onModel'  //we are using refPath
-    }
+    },
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Comment',
+        }
+    ]
 
 }, { timestamps: true });
 
